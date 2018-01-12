@@ -194,26 +194,8 @@ class Header extends React.PureComponent<Props, State> {
   }
 
   _renderTitle(props: SceneProps, options: *): ?React.Node {
-    const style = {};
-
-    if (Platform.OS === 'android') {
-      if (!options.hasLeftComponent) {
-        style.left = 0;
-      }
-      if (!options.hasRightComponent) {
-        style.right = 0;
-      }
-    } else if (
-      Platform.OS === 'ios' &&
-      !options.hasLeftComponent &&
-      !options.hasRightComponent
-    ) {
-      style.left = 0;
-      style.right = 0;
-    }
-
     return this._renderSubView(
-      { ...props, style },
+      { ...props, style: { left: 0, right: 0 } },
       'title',
       this._renderTitleComponent,
       this.props.titleInterpolator
