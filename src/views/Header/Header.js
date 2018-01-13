@@ -371,7 +371,7 @@ const styles = StyleSheet.create({
     right: TITLE_OFFSET,
     top: 0,
     position: 'absolute',
-    alignItems: 'center',
+    alignItems: Platform.OS === 'ios' ? 'center' : 'flex-start',
   },
   left: {
     left: 0,
